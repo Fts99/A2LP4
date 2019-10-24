@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Criar produto</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<form action="#" th:action="@{/produtos}" th:object="${produto}" method="post" >
+		<label for="nome">Nome</label>
+		<input type="text" 
+			   th:field="*{nome}" 
+			   id="nome" 
+			   placeholder="Nome do produto">
+		<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+		
+		<input type="submit" value="Adicionar produto">
+	</form>
+</body>
+</html>
